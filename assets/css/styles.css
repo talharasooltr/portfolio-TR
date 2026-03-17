@@ -1,39 +1,655 @@
+/* ==========================================================================
+   Design Tokens
+   All colors, spacing, typography, and sizing in one place.
+   Change these to re-theme the entire site.
+   ========================================================================== */
+
 :root {
-    --zinc-900: #18181b;
-    --zinc-400: #a1a1aa;
-    --zinc-600: #52525b;
-    --color-text-primary: var(--zinc-900);
-    --color-text-secondary: var(--zinc-400);
+  /* --- Colors --- */
+  --color-bg:              #fafafa;
+  --color-bg-card:         #e4e4e7;
+  --color-bg-white:        #ffffff;
+  --color-bg-overlay:      rgba(99, 102, 241, 0.1);
+  --color-bg-badge:        rgba(255, 255, 255, 0.9);
+
+  --color-text-primary:    #18181b;
+  --color-text-secondary:  #a1a1aa;
+  --color-text-muted:      #71717a;
+  --color-text-body:       #52525b;
+
+  --color-border:          #e4e4e7;
+  --color-selection:       #e0e7ff;
+  --color-link-underline:  #d4d4d8;
+  --color-highlight:       #3f3f46;
+
+  /* Tag color palette */
+  --tag-indigo-text:   #4f46e5; --tag-indigo-bg:   #eef2ff;
+  --tag-emerald-text:  #059669; --tag-emerald-bg:   #ecfdf5;
+  --tag-orange-text:   #ea580c; --tag-orange-bg:    #fff7ed;
+  --tag-blue-text:     #2563eb; --tag-blue-bg:      #eff6ff;
+  --tag-purple-text:   #9333ea; --tag-purple-bg:    #faf5ff;
+  --tag-rose-text:     #e11d48; --tag-rose-bg:      #fff1f2;
+  --tag-amber-text:    #d97706; --tag-amber-bg:     #fffbeb;
+  --tag-teal-text:     #0d9488; --tag-teal-bg:      #f0fdfa;
+  --tag-zinc-text:     #52525b; --tag-zinc-bg:      #f4f4f5;
+
+  /* --- Typography --- */
+  --font-family:           system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  --font-size-xs:          0.625rem;   /* 10px - tags */
+  --font-size-sm:          0.875rem;   /* 14px - body small, nav */
+  --font-size-base:        1rem;       /* 16px */
+  --font-size-md:          1.125rem;   /* 18px - body1 */
+  --font-size-lg:          1.25rem;    /* 20px - card titles, nav brand */
+  --font-size-hero:        3rem;       /* 48px - mobile hero */
+  --font-size-hero-lg:     4.5rem;     /* 72px - desktop hero */
+
+  --line-height-tight:     1.1;
+  --line-height-snug:      1.3;
+  --line-height-relaxed:   1.625;
+
+  --letter-spacing-tight:  -0.02em;
+  --letter-spacing-widest: 0.1em;
+
+  --font-weight-normal:    400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  /* --- Spacing --- */
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* --- Layout --- */
+  --max-width:             64rem;   /* 1024px */
+  --max-width-hero-text:   48rem;
+  --max-width-body-text:   36rem;
+  --padding-x:             var(--space-8);
+
+  /* --- Borders & Radius --- */
+  --radius-sm:    0.25rem;
+  --radius-md:    0.5rem;
+  --radius-lg:    1rem;
+  --radius-full:  9999px;
+
+  /* --- Transitions --- */
+  --transition-fast:   150ms ease;
+  --transition-base:   300ms ease;
+  --transition-slow:   500ms ease;
+
+  /* --- Shadows --- */
+  --shadow-xl:  0 20px 25px -5px rgba(0,0,0,.1), 0 8px 10px -6px rgba(0,0,0,.1);
 }
 
-.text-primary {
-    color: var(--color-text-primary);
+
+/* ==========================================================================
+   Base / Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.text-secondary {
-    color: var(--color-text-secondary);
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.megaLarge {
-    max-width: 48rem;
-    font-size: 3rem;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -0.01562em;
-    margin-bottom: 2rem;
+body {
+  min-height: 100vh;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
 }
 
-.body1 {
-    max-width: 36rem;
-    font-size: 1.125rem;
-    line-height: 1.625;
-    color: var(--zinc-600);
+::selection {
+  background-color: var(--color-selection);
 }
 
-/* Responsive for sm:text-7xl */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ==========================================================================
+   Layout Utilities
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: var(--padding-x);
+}
+
+
+/* ==========================================================================
+   Navigation
+   ========================================================================== */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-12);
+}
+
+.nav__brand {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.nav__link {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.nav__link:hover {
+  color: var(--color-text-primary);
+}
+
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+  padding-block: var(--space-24);
+}
+
+.hero__title {
+  max-width: var(--max-width-hero-text);
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-8);
+}
+
+.hero__title-accent {
+  color: var(--color-text-secondary);
+}
+
+.hero__subtitle {
+  max-width: var(--max-width-body-text);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-body);
+}
+
 @media (min-width: 640px) {
-    .megaLarge {
-        font-size: 4.5rem;
-        /* text-7xl */
-    }
+  .hero__title {
+    font-size: var(--font-size-hero-lg);
+  }
+}
+
+
+/* ==========================================================================
+   Project Grid
+   ========================================================================== */
+
+.project-grid {
+  display: grid;
+  gap: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ==========================================================================
+   Project Card
+   ========================================================================== */
+
+.card {
+  cursor: pointer;
+}
+
+.card__image-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-card);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.card:hover .card__image {
+  transform: scale(1.05);
+}
+
+.card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-overlay);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.card:hover .card__overlay {
+  opacity: 1;
+}
+
+.card__overlay-label {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-badge);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  box-shadow: var(--shadow-xl);
+}
+
+.card__body {
+  margin-top: var(--space-6);
+}
+
+.card__tags {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.card__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+}
+
+.card__description {
+  margin-top: var(--space-2);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-muted);
+}
+
+.card__description strong {
+  color: var(--color-highlight);
+  font-weight: var(--font-weight-semibold);
+}
+
+
+/* ==========================================================================
+   Tags
+   ========================================================================== */
+
+.tag {
+  display: inline-block;
+  padding: 0.25rem var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Tag color variants — driven by design tokens */
+.tag--indigo  { color: var(--tag-indigo-text);  background-color: var(--tag-indigo-bg); }
+.tag--emerald { color: var(--tag-emerald-text); background-color: var(--tag-emerald-bg); }
+.tag--orange  { color: var(--tag-orange-text);  background-color: var(--tag-orange-bg); }
+.tag--blue    { color: var(--tag-blue-text);    background-color: var(--tag-blue-bg); }
+.tag--purple  { color: var(--tag-purple-text);  background-color: var(--tag-purple-bg); }
+.tag--rose    { color: var(--tag-rose-text);    background-color: var(--tag-rose-bg); }
+.tag--amber   { color: var(--tag-amber-text);   background-color: var(--tag-amber-bg); }
+.tag--teal    { color: var(--tag-teal-text);    background-color: var(--tag-teal-bg); }
+.tag--zinc    { color: var(--tag-zinc-text);    background-color: var(--tag-zinc-bg); }
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer {
+  border-top: 1px solid var(--color-border);
+  background-color: var(--color-bg-white);
+  padding-block: var(--space-16);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .footer__inner {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.footer__heading {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+}
+
+.footer__email {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-link-underline);
+  text-underline-offset: 4px;
+  transition: color var(--transition-fast);
+}
+
+.footer__email:hover {
+  color: var(--color-text-primary);
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer__social-link {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.footer__social-link:hover {
+  color: var(--color-text-primary);
+}
+
+
+/* ==========================================================================
+   Section Spacing
+   ========================================================================== */
+
+.section--work {
+  padding-bottom: var(--space-32);
+}
+
+
+/* ==========================================================================
+   Progressive Enhancement (JS-added classes)
+   ========================================================================== */
+
+/* Active nav link */
+.nav__link--active {
+  color: var(--color-text-primary);
+}
+
+/* Scroll-reveal for cards */
+.card--hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.card--visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+/* ==========================================================================
+   Card as Link (wrapping <a>)
+   ========================================================================== */
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-lg);
+}
+
+.card-link:focus-visible {
+  outline: 2px solid var(--tag-indigo-text);
+  outline-offset: 4px;
+}
+
+
+/* ==========================================================================
+   Project Detail — Back Link
+   ========================================================================== */
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  margin-bottom: var(--space-8);
+}
+
+.back-link:hover {
+  color: var(--color-text-primary);
+}
+
+.back-link__arrow {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+
+/* ==========================================================================
+   Project Detail — Hero
+   ========================================================================== */
+
+.detail-hero {
+  padding-bottom: var(--space-16);
+}
+
+.detail-hero__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.detail-hero__title {
+  font-size: 2rem;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .detail-hero__title {
+    font-size: 2.75rem;
+  }
+}
+
+.detail-hero__summary {
+  max-width: var(--max-width-hero-text);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-body);
+}
+
+
+/* ==========================================================================
+   Project Detail — Cover Image
+   ========================================================================== */
+
+.detail-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-card);
+  margin-bottom: var(--space-16);
+}
+
+
+/* ==========================================================================
+   Project Detail — Meta Bar (Role / Timeline / Stack)
+   ========================================================================== */
+
+.detail-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  padding-block: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-16);
+}
+
+@media (min-width: 640px) {
+  .detail-meta {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.detail-meta__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.detail-meta__value {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+
+/* ==========================================================================
+   Project Detail — Body Content
+   ========================================================================== */
+
+.detail-body {
+  max-width: var(--max-width-body-text);
+  padding-bottom: var(--space-24);
+}
+
+.detail-body__heading {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-4);
+  margin-top: var(--space-12);
+}
+
+.detail-body__heading:first-child {
+  margin-top: 0;
+}
+
+.detail-body p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-body);
+  margin-bottom: var(--space-4);
+}
+
+.detail-body strong {
+  color: var(--color-highlight);
+  font-weight: var(--font-weight-semibold);
+}
+
+.detail-body ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.detail-body li {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-body);
+  margin-bottom: var(--space-2);
+}
+
+.detail-body li strong {
+  color: var(--color-highlight);
+}
+
+
+/* ==========================================================================
+   Project Detail — Next Project CTA
+   ========================================================================== */
+
+.next-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--space-12);
+  border-top: 1px solid var(--color-border);
+  margin-bottom: var(--space-16);
+}
+
+.next-project__label {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-widest);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.next-project__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  transition: color var(--transition-fast);
+}
+
+.next-project__link:hover .next-project__title {
+  color: var(--tag-indigo-text);
+}
+
+.next-project__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.next-project__arrow {
+  font-size: 1.5rem;
+  color: var(--color-text-muted);
 }

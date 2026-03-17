@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visual Anomaly Detection for Manufacturing QA — Talha Rasool</title>
+  <meta name="description"
+    content="Case study: CNN autoencoder and PatchCore-based defect detection system deployed on NVIDIA Jetson for real-time manufacturing quality assurance, cutting defective shipments by 83%." />
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/projects/anomaly-detection.html" />
+
+  <meta property="og:title" content="Visual Anomaly Detection for Manufacturing QA — Talha Rasool" />
+  <meta property="og:description" content="CNN autoencoder + PatchCore edge-deployed defect detection cutting defective shipments by 83%." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/projects/anomaly-detection.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Visual Anomaly Detection for Manufacturing QA — Talha Rasool" />
+  <meta name="twitter:description" content="Edge-deployed defect detection cutting defective shipments by 83%." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Visual Anomaly Detection for Manufacturing QA",
+    "description": "CNN autoencoder and PatchCore defect detection system deployed on NVIDIA Jetson for real-time manufacturing QA.",
+    "author": { "@type": "Person", "name": "Talha Rasool" },
+    "keywords": ["Deep Learning", "Manufacturing", "CNN", "PatchCore", "NVIDIA Jetson", "Edge AI"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="../index.html" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="../index.html#work">Work</a></li>
+      <li><a class="nav__link" href="../index.html#about">About</a></li>
+      <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+      All Projects
+    </a>
+
+    <header class="detail-hero">
+      <div class="detail-hero__tags">
+        <span class="tag tag--orange">Deep Learning</span>
+        <span class="tag tag--zinc">Manufacturing</span>
+      </div>
+      <h1 class="detail-hero__title">Visual Anomaly Detection for Manufacturing QA</h1>
+      <p class="detail-hero__summary">
+        An edge-deployed defect detection system that uses unsupervised deep learning to flag surface
+        anomalies on a production line in real time — requiring only 50 training samples per product SKU
+        and cutting defective shipments by 83%.
+      </p>
+    </header>
+
+    <img class="detail-cover"
+      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200"
+      alt="Visual Anomaly Detection — manufacturing quality assurance system"
+      width="1200" height="675" />
+
+    <section class="detail-meta" aria-label="Project Information">
+      <div>
+        <p class="detail-meta__label">Role</p>
+        <p class="detail-meta__value">ML &amp; Edge Deployment Engineer</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Timeline</p>
+        <p class="detail-meta__value">3.5 months</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Stack</p>
+        <p class="detail-meta__value">Python, PyTorch, PatchCore, NVIDIA Jetson, TensorRT, FastAPI</p>
+      </div>
+    </section>
+
+    <article class="detail-body">
+      <h2 class="detail-body__heading">Problem</h2>
+      <p>
+        The manufacturing client produced 15+ product SKUs with varying surface finishes. Traditional defect
+        detection required <strong>large labeled datasets per SKU</strong> — impractical for low-volume runs.
+        Manual visual inspection caught only <strong>60% of surface defects</strong>, leading to costly returns
+        and customer complaints.
+      </p>
+
+      <h2 class="detail-body__heading">Approach</h2>
+      <p>
+        I designed a two-model architecture optimized for few-shot anomaly detection:
+      </p>
+      <ul>
+        <li><strong>CNN Autoencoder:</strong> Trained exclusively on defect-free images, the autoencoder learns the "normal" appearance of each SKU. At inference, anomalous regions produce high reconstruction error, creating a pixel-level anomaly heatmap.</li>
+        <li><strong>PatchCore:</strong> For products with subtle texture defects, PatchCore provides few-shot detection by building a memory bank of normal patch features from only 50 reference images, then flagging patches that deviate from the learned distribution.</li>
+        <li><strong>Edge Deployment:</strong> Both models were optimized with TensorRT and deployed on NVIDIA Jetson devices mounted directly on the production line, running inference at 25 FPS with under 40ms latency.</li>
+        <li><strong>Rejection API:</strong> When an anomaly confidence exceeds the threshold, the system triggers a pneumatic rejection arm via a FastAPI endpoint, removing the defective item from the conveyor.</li>
+      </ul>
+
+      <h2 class="detail-body__heading">Outcome</h2>
+      <p>
+        The system achieved a <strong>96% defect detection rate</strong> with a false positive rate below 2%.
+        Defective shipments dropped by <strong>83%</strong> within the first month. The few-shot approach meant
+        new SKUs could be onboarded in <strong>under 2 hours</strong> with minimal data collection.
+      </p>
+
+      <h2 class="detail-body__heading">Key Technologies</h2>
+      <ul>
+        <li><strong>CNN Autoencoder</strong> — Unsupervised anomaly detection via reconstruction error</li>
+        <li><strong>PatchCore</strong> — Few-shot defect detection with memory bank</li>
+        <li><strong>NVIDIA Jetson</strong> — Edge inference hardware</li>
+        <li><strong>TensorRT</strong> — Model optimization for real-time inference</li>
+        <li><strong>FastAPI</strong> — Rejection trigger API</li>
+      </ul>
+    </article>
+
+    <div class="next-project">
+      <a href="wound-morphometry.html" class="next-project__link">
+        <p class="next-project__label">Next Project</p>
+        <p class="next-project__title">Automated Wound Morphometry &rarr;</p>
+      </a>
+    </div>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
+      </div>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

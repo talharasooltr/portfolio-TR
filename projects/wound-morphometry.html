@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated Wound Morphometry — Talha Rasool</title>
+  <meta name="description"
+    content="Case study: Precision wound measurement system using YOLOv11 for localization, Meta SAM for segmentation, and LiDAR for 3D mapping with sub-millimeter accuracy." />
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/projects/wound-morphometry.html" />
+
+  <meta property="og:title" content="Automated Wound Morphometry — Talha Rasool" />
+  <meta property="og:description" content="Precision wound measurement using YOLOv11, Meta SAM, and LiDAR sensor data for sub-millimeter 3D mapping." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/projects/wound-morphometry.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Automated Wound Morphometry — Talha Rasool" />
+  <meta name="twitter:description" content="Precision wound measurement using YOLOv11, Meta SAM, and LiDAR sensor data." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Automated Wound Morphometry",
+    "description": "Precision wound measurement system using YOLOv11, Meta SAM, and LiDAR for sub-millimeter 3D mapping.",
+    "author": { "@type": "Person", "name": "Talha Rasool" },
+    "keywords": ["Computer Vision", "LiDAR", "YOLOv11", "Meta SAM", "Medical AI"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="../index.html" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="../index.html#work">Work</a></li>
+      <li><a class="nav__link" href="../index.html#about">About</a></li>
+      <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+      All Projects
+    </a>
+
+    <!-- Hero -->
+    <header class="detail-hero">
+      <div class="detail-hero__tags">
+        <span class="tag tag--indigo">Computer Vision</span>
+        <span class="tag tag--emerald">LiDAR</span>
+      </div>
+      <h1 class="detail-hero__title">Automated Wound Morphometry</h1>
+      <p class="detail-hero__summary">
+        A precision measurement system that combines deep learning-based detection with LiDAR depth sensing
+        to deliver sub-millimeter wound area and volume calculations — eliminating manual ruler-based methods
+        in clinical settings.
+      </p>
+    </header>
+
+    <!-- Cover -->
+    <img class="detail-cover"
+      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200"
+      alt="Automated Wound Morphometry project — clinical measurement pipeline"
+      width="1200" height="675" />
+
+    <!-- Meta -->
+    <section class="detail-meta" aria-label="Project Information">
+      <div>
+        <p class="detail-meta__label">Role</p>
+        <p class="detail-meta__value">Lead Developer</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Timeline</p>
+        <p class="detail-meta__value">3 months</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Stack</p>
+        <p class="detail-meta__value">Python, YOLOv11, Meta SAM, LiDAR SDK, OpenCV</p>
+      </div>
+    </section>
+
+    <!-- Body -->
+    <article class="detail-body">
+      <h2 class="detail-body__heading">Problem</h2>
+      <p>
+        Clinical wound measurement is typically performed using disposable rulers placed beside the wound — a method that is
+        <strong>inaccurate</strong>, <strong>inconsistent</strong> between practitioners, and fails to capture depth or volume.
+        This limits the ability to track healing progress over time and leads to suboptimal treatment decisions.
+      </p>
+
+      <h2 class="detail-body__heading">Approach</h2>
+      <p>
+        I designed a three-stage pipeline that automates the entire measurement workflow:
+      </p>
+      <ul>
+        <li><strong>Detection:</strong> YOLOv11 localizes the wound region in a standard RGB image, producing a tight bounding box for downstream processing.</li>
+        <li><strong>Segmentation:</strong> The cropped region is passed to Meta SAM (Segment Anything Model) in zero-shot mode, generating a pixel-accurate wound boundary mask without any task-specific fine-tuning.</li>
+        <li><strong>3D Mapping:</strong> The 2D mask is projected into 3D space using synchronized LiDAR point cloud data, enabling calculation of area, perimeter, depth, and volume.</li>
+      </ul>
+
+      <h2 class="detail-body__heading">Outcome</h2>
+      <p>
+        The system achieved <strong>sub-millimeter accuracy</strong> for area measurements and within 2% error for volume estimation
+        when benchmarked against structured-light 3D scanners. It reduced measurement time from 5+ minutes to under 10 seconds
+        per wound, and eliminated inter-observer variability entirely.
+      </p>
+
+      <h2 class="detail-body__heading">Key Technologies</h2>
+      <ul>
+        <li><strong>YOLOv11</strong> — Real-time wound localization</li>
+        <li><strong>Meta SAM</strong> — Zero-shot segmentation</li>
+        <li><strong>LiDAR</strong> — Depth sensing for 3D reconstruction</li>
+        <li><strong>OpenCV</strong> — Image processing and calibration</li>
+        <li><strong>Python</strong> — End-to-end pipeline orchestration</li>
+      </ul>
+    </article>
+
+    <!-- Next Project -->
+    <div class="next-project">
+      <a href="shot-selection.html" class="next-project__link">
+        <p class="next-project__label">Next Project</p>
+        <p class="next-project__title">Predictive Shot Selection Engine &rarr;</p>
+      </a>
+    </div>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
+      </div>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

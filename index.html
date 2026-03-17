@@ -5,167 +5,273 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Talha Rasool (TR) - Designer and developer specializing in digital experiences. Explore case studies in Computer Vision, LiDAR, Sports Tech, and Deep Learning." />
+    content="Talha Rasool (TR) — Designer and developer specializing in Computer Vision, LiDAR, Deep Learning, and Sports Tech. Explore real-world AI case studies and projects." />
   <meta name="keywords"
-    content="Talha Rasool, TR, Portfolio, Designer, Developer, Computer Vision, LiDAR, Deep Learning, Sports Tech" />
+    content="Talha Rasool, TR, Portfolio, Designer, Developer, Computer Vision, LiDAR, Deep Learning, Sports Tech, AI Engineer" />
   <meta name="author" content="Talha Rasool" />
-
-  <meta property="og:title" content="Talha Rasool (TR) Portfolio" />
-  <meta property="og:description"
-    content="Designer and developer focusing on digital experiences. Explore my projects in Computer Vision, LiDAR, and Sports Analytics." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tr-196.github.io/portfolio-TR" />
-  <meta property="og:image"
-    content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" />
 
   <title>Talha Rasool (TR) Portfolio</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Talha Rasool (TR) — Designer & Developer Portfolio" />
+  <meta property="og:description"
+    content="Designer and developer focusing on digital experiences. Explore projects in Computer Vision, LiDAR, Deep Learning, and Sports Analytics." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/" />
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Talha Rasool (TR) — Designer & Developer Portfolio" />
+  <meta name="twitter:description"
+    content="Designer and developer focusing on digital experiences. Explore projects in Computer Vision, LiDAR, and Sports Analytics." />
+  <meta name="twitter:image"
+    content="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1200" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Talha Rasool",
+      "alternateName": "TR",
+      "url": "https://talharasooltr.github.io/portfolio-TR/",
+      "email": "mailto:talharasool196@gmail.com",
+      "jobTitle": "Designer & Developer",
+      "description": "Designer and developer specializing in Computer Vision, LiDAR, Deep Learning, and Sports Tech.",
+      "sameAs": ["https://github.com/trexplains"],
+      "knowsAbout": ["Computer Vision","Deep Learning","LiDAR","Sports Analytics","YOLO","Meta SAM","OCR","Speech AI","Manufacturing QA"]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon" />
 </head>
 
-<body class="min-h-screen bg-zinc-50 font-sans text-zinc-900 selection:bg-indigo-100">
+<body>
 
-  <nav class="mx-auto flex max-w-5xl items-center justify-between px-8 py-12" aria-label="Main Navigation">
-    <a href="#" class="text-xl font-bold tracking-tighter">Talha Rasool (TR)</a>
-    <ul class="flex space-x-8 text-sm font-medium text-zinc-500">
-      <li><a href="#work" class="transition-colors hover:text-zinc-900">Work</a></li>
-      <li><a href="#about" class="transition-colors hover:text-zinc-900">About</a></li>
-      <li><a href="#contact" class="transition-colors hover:text-zinc-900">Contact</a></li>
+  <!-- Navigation -->
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="#" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="#work">Work</a></li>
+      <li><a class="nav__link" href="#about">About</a></li>
+      <li><a class="nav__link" href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <header id="about" class="mx-auto max-w-5xl px-8 py-24">
-    <h1 class="megaLarge text-primary">
-      Designer and developer focusing on <span class="text-secondary">digital experiences.</span>
+  <!-- Hero / About -->
+  <header id="about" class="container hero">
+    <h1 class="hero__title">
+      Designer and developer focusing on
+      <span class="hero__title-accent">digital experiences.</span>
     </h1>
-    <p class="body1">
-      I build clean, functional, and user-centered applications. Currently based in your city, available for freelance
-      and full-time opportunities.
+    <p class="hero__subtitle">
+      I build clean, functional, and user-centered applications.
+      Currently based in your city, available for freelance and full-time opportunities.
     </p>
   </header>
 
-  <main id="work" class="mx-auto max-w-5xl px-8 pb-32">
-    <section id="projects-container" class="grid gap-12 md:grid-cols-2" aria-label="Portfolio Projects">
+  <!-- Work / Projects -->
+  <main id="work" class="container section--work">
+    <section class="project-grid" aria-label="Portfolio Projects">
 
       <!-- Project 1 -->
-      <article class="group cursor-pointer">
-        <div class="aspect-video w-full overflow-hidden rounded-2xl bg-zinc-200 relative">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
-            alt="Automated Wound Morphometry"
-            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span
-              class="bg-white/90 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-zinc-900 shadow-xl">View
-              Details</span>
+      <a href="projects/wound-morphometry.html" class="card-link">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img class="card__image"
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+            alt="Automated Wound Morphometry — precision measurement using YOLOv11, Meta SAM, and LiDAR"
+            loading="lazy" width="800" height="450" />
+          <div class="card__overlay" aria-hidden="true">
+            <span class="card__overlay-label">View Details</span>
           </div>
         </div>
-        <div class="mt-6">
-          <div class="flex items-center space-x-2 mb-2">
-            <span
-              class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-indigo-600 bg-indigo-50">Computer
-              Vision</span>
-            <span
-              class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-emerald-600 bg-emerald-50">LiDAR</span>
+        <div class="card__body">
+          <div class="card__tags">
+            <span class="tag tag--indigo">Computer Vision</span>
+            <span class="tag tag--emerald">LiDAR</span>
           </div>
-          <h2 class="text-xl font-semibold leading-tight">Automated Wound Morphometry</h2>
-          <p class="mt-2 text-zinc-500 leading-relaxed text-sm">
-            Developed a precision measurement system using <strong class="text-zinc-700">YOLOv11</strong> for
-            localization and <strong class="text-zinc-700">Meta SAM</strong> for zero-shot segmentation. Integrated
-            <strong class="text-zinc-700">LiDAR sensor data</strong> to map 2D masks into 3D space, achieving
-            sub-millimeter
-            accuracy.
+          <h2 class="card__title">Automated Wound Morphometry</h2>
+          <p class="card__description">
+            Developed a precision measurement system using <strong>YOLOv11</strong> for localization
+            and <strong>Meta SAM</strong> for zero-shot segmentation. Integrated
+            <strong>LiDAR sensor data</strong> to map 2D masks into 3D space, achieving sub-millimeter accuracy.
           </p>
         </div>
       </article>
+      </a>
 
       <!-- Project 2 -->
-      <article class="group cursor-pointer">
-        <div class="aspect-video w-full overflow-hidden rounded-2xl bg-zinc-200 relative">
-          <img src="https://images.unsplash.com/photo-1624194697120-34347cff8b58?fm=jpg&q=60&w=3000"
-            alt="Predictive Shot Selection Engine"
-            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span
-              class="bg-white/90 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-zinc-900 shadow-xl">View
-              Details</span>
+      <a href="projects/shot-selection.html" class="card-link">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img class="card__image"
+            src="https://images.unsplash.com/photo-1624194697120-34347cff8b58?fm=jpg&q=60&w=3000"
+            alt="Predictive Shot Selection Engine — deep learning for cricket shot prediction"
+            loading="lazy" width="800" height="450" />
+          <div class="card__overlay" aria-hidden="true">
+            <span class="card__overlay-label">View Details</span>
           </div>
         </div>
-        <div class="mt-6">
-          <div class="flex items-center space-x-2 mb-2">
-            <span
-              class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-orange-600 bg-orange-50">Deep
-              Learning</span>
-            <span
-              class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-blue-600 bg-blue-50">Sports
-              Tech</span>
+        <div class="card__body">
+          <div class="card__tags">
+            <span class="tag tag--orange">Deep Learning</span>
+            <span class="tag tag--blue">Sports Tech</span>
           </div>
-          <h2 class="text-xl font-semibold leading-tight">Predictive Shot Selection Engine</h2>
-          <p class="mt-2 text-zinc-500 leading-relaxed text-sm">
-            A hybrid deep learning pipeline designed to forecast batsman intent. Uses <strong
-              class="text-zinc-700">YOLO</strong>
-            for real-time tracking of ball trajectory and player positioning, combined with a <strong
-              class="text-zinc-700">U-Net</strong>
-            backbone to extract spatial heatmaps of the crease, predicting the most probable shot (<strong
-              class="text-zinc-700">Drive, Pull, Cut</strong>)
-            before impact.
+          <h2 class="card__title">Predictive Shot Selection Engine</h2>
+          <p class="card__description">
+            A hybrid deep learning pipeline designed to forecast batsman intent. Uses <strong>YOLO</strong>
+            for real-time tracking of ball trajectory and player positioning, combined with a
+            <strong>U-Net</strong> backbone to extract spatial heatmaps of the crease, predicting the most
+            probable shot (<strong>Drive, Pull, Cut</strong>) before impact.
           </p>
         </div>
       </article>
+      </a>
 
       <!-- Project 3 -->
-      <article class="group cursor-pointer">
-        <div class="aspect-video w-full overflow-hidden rounded-2xl bg-zinc-200 relative">
-          <img src="https://plus.unsplash.com/premium_photo-1756712070763-ef23cf0245c9?fm=jpg&q=60&w=3000"
-            alt="AI-Powered Speech Enhancement Pipeline"
-            class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-          <div
-            class="absolute inset-0 bg-indigo-500/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-            <span
-              class="bg-white/90 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-zinc-900 shadow-xl">View
-              Details</span>
+      <a href="projects/speech-enhancement.html" class="card-link">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img class="card__image"
+            src="https://plus.unsplash.com/premium_photo-1756712070763-ef23cf0245c9?fm=jpg&q=60&w=3000"
+            alt="Speech Enhancement Pipeline — AI-powered audio transcription and regeneration"
+            loading="lazy" width="800" height="450" />
+          <div class="card__overlay" aria-hidden="true">
+            <span class="card__overlay-label">View Details</span>
           </div>
         </div>
-        <div class="mt-6">
-          <div class="flex items-center space-x-2 mb-2">
-            <span
-              class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-indigo-600 bg-indigo-50">AI</span>
-            <span
-              class="text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded text-purple-600 bg-purple-50">Speech
-              Tech</span>
+        <div class="card__body">
+          <div class="card__tags">
+            <span class="tag tag--indigo">AI</span>
+            <span class="tag tag--purple">Speech Tech</span>
           </div>
-          <h2 class="text-xl font-semibold leading-tight">Speech Enhancement Pipeline</h2>
-          <p class="mt-2 text-zinc-500 leading-relaxed text-sm">
-            Built a multi-stage AI pipeline that transcribes audio to text, improves English using <strong
-              class="text-zinc-700">Gemini LLM</strong>,
-            and regenerates polished speech via <strong class="text-zinc-700">Text-to-Speech</strong>. This system
-            ensures clear, accurate,
-            and enhanced audio output, ideal for content creators and accessibility tools.
+          <h2 class="card__title">Speech Enhancement Pipeline</h2>
+          <p class="card__description">
+            Built a multi-stage AI pipeline that transcribes audio to text, improves English using
+            <strong>Gemini LLM</strong>, and regenerates polished speech via <strong>Text-to-Speech</strong>.
+            This system ensures clear, accurate, and enhanced audio output, ideal for content creators
+            and accessibility tools.
           </p>
         </div>
       </article>
+      </a>
+
+      <!-- Project 4 -->
+      <a href="projects/object-counting.html" class="card-link">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img class="card__image"
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+            alt="Real-Time Object Counting Dashboard — YOLOv8 and DeepSORT tracking system"
+            loading="lazy" width="800" height="450" />
+          <div class="card__overlay" aria-hidden="true">
+            <span class="card__overlay-label">View Details</span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__tags">
+            <span class="tag tag--indigo">Computer Vision</span>
+            <span class="tag tag--rose">Real-Time</span>
+          </div>
+          <h2 class="card__title">Real-Time Object Counting &amp; Tracking Dashboard</h2>
+          <p class="card__description">
+            Built a live monitoring dashboard for a retail client using <strong>YOLOv8</strong> and
+            <strong>DeepSORT</strong> to track and count people across multiple camera zones.
+            Outputs live heatmaps, dwell-time analytics, and crowd density alerts via a
+            <strong>FastAPI + WebSocket</strong> backend — reducing manual monitoring overhead by 70%.
+          </p>
+        </div>
+      </article>
+      </a>
+
+      <!-- Project 5 -->
+      <a href="projects/invoice-extraction.html" class="card-link">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img class="card__image"
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800"
+            alt="Intelligent Document and Invoice Extraction Pipeline using PaddleOCR"
+            loading="lazy" width="800" height="450" />
+          <div class="card__overlay" aria-hidden="true">
+            <span class="card__overlay-label">View Details</span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__tags">
+            <span class="tag tag--amber">OCR</span>
+            <span class="tag tag--teal">Automation</span>
+          </div>
+          <h2 class="card__title">Intelligent Document &amp; Invoice Extraction Pipeline</h2>
+          <p class="card__description">
+            Designed an end-to-end document automation system using <strong>PaddleOCR</strong> and
+            <strong>LayoutLMv3</strong> to extract structured fields (vendor, totals, line items)
+            from scanned invoices and PDFs. Integrated with <strong>Google Sheets API</strong>
+            for zero-touch data entry — processing 500+ documents daily with 97% field accuracy.
+          </p>
+        </div>
+      </article>
+      </a>
+
+      <!-- Project 6 -->
+      <a href="projects/anomaly-detection.html" class="card-link">
+      <article class="card">
+        <div class="card__image-wrapper">
+          <img class="card__image"
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800"
+            alt="Visual Anomaly Detection for Manufacturing QA using CNN autoencoder"
+            loading="lazy" width="800" height="450" />
+          <div class="card__overlay" aria-hidden="true">
+            <span class="card__overlay-label">View Details</span>
+          </div>
+        </div>
+        <div class="card__body">
+          <div class="card__tags">
+            <span class="tag tag--orange">Deep Learning</span>
+            <span class="tag tag--zinc">Manufacturing</span>
+          </div>
+          <h2 class="card__title">Visual Anomaly Detection for Manufacturing QA</h2>
+          <p class="card__description">
+            Trained a <strong>CNN autoencoder</strong> on defect-free product images to flag
+            surface anomalies on a production line in real time. Used <strong>PatchCore</strong>
+            for few-shot defect detection, requiring only 50 training samples per product SKU.
+            Deployed on <strong>NVIDIA Jetson</strong> at the edge with a rejection trigger API —
+            cutting defective shipments by 83%.
+          </p>
+        </div>
+      </article>
+      </a>
 
     </section>
   </main>
 
-  <footer id="contact" class="border-t border-zinc-200 bg-white px-8 py-16">
-    <div class="mx-auto flex max-w-5xl flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+  <!-- Footer / Contact -->
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
       <div>
-        <p class="text-lg font-medium">Let's build something together.</p>
-        <a href="mailto:talharasool196@gmail.com"
-          class="text-zinc-500 underline decoration-zinc-300 underline-offset-4 hover:text-zinc-900">talharasool196@gmail.com</a>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
       </div>
-      <div class="flex space-x-6 text-sm text-zinc-500">
-        <a href="#" class="hover:text-zinc-900">Twitter</a>
-        <a href="#" class="hover:text-zinc-900">LinkedIn</a>
-        <a href="https://github.com/trexplains" class="hover:text-zinc-900">GitHub</a>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </footer>
+
+  <!-- JS: progressive enhancement only -->
+  <script src="assets/js/app.js"></script>
 
 </body>
 

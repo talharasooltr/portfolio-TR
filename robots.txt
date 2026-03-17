@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tr-422.github.io/portfolio-TR/sitemap.xml
+Sitemap: https://talharasooltr.github.io/portfolio-TR/sitemap.xml

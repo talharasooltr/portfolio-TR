@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Object Counting &amp; Tracking Dashboard — Talha Rasool</title>
+  <meta name="description"
+    content="Case study: Live monitoring dashboard using YOLOv8 and DeepSORT for multi-camera people tracking, heatmaps, and crowd density alerts via FastAPI and WebSocket." />
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/projects/object-counting.html" />
+
+  <meta property="og:title" content="Real-Time Object Counting & Tracking Dashboard — Talha Rasool" />
+  <meta property="og:description" content="YOLOv8 + DeepSORT live dashboard for retail people counting and crowd analytics." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/projects/object-counting.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Real-Time Object Counting & Tracking Dashboard — Talha Rasool" />
+  <meta name="twitter:description" content="YOLOv8 + DeepSORT live dashboard for retail crowd analytics." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Real-Time Object Counting & Tracking Dashboard",
+    "description": "Live monitoring dashboard using YOLOv8 and DeepSORT for multi-camera people tracking with FastAPI WebSocket backend.",
+    "author": { "@type": "Person", "name": "Talha Rasool" },
+    "keywords": ["Computer Vision", "Real-Time", "YOLOv8", "DeepSORT", "FastAPI", "Retail Analytics"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="../index.html" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="../index.html#work">Work</a></li>
+      <li><a class="nav__link" href="../index.html#about">About</a></li>
+      <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+      All Projects
+    </a>
+
+    <header class="detail-hero">
+      <div class="detail-hero__tags">
+        <span class="tag tag--indigo">Computer Vision</span>
+        <span class="tag tag--rose">Real-Time</span>
+      </div>
+      <h1 class="detail-hero__title">Real-Time Object Counting &amp; Tracking Dashboard</h1>
+      <p class="detail-hero__summary">
+        A live monitoring system built for a retail client that tracks and counts people across
+        multiple camera zones, delivering real-time heatmaps, dwell-time analytics, and crowd
+        density alerts — reducing manual monitoring overhead by 70%.
+      </p>
+    </header>
+
+    <img class="detail-cover"
+      src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"
+      alt="Real-Time Object Counting Dashboard — multi-camera retail analytics"
+      width="1200" height="675" />
+
+    <section class="detail-meta" aria-label="Project Information">
+      <div>
+        <p class="detail-meta__label">Role</p>
+        <p class="detail-meta__value">Backend &amp; CV Engineer</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Timeline</p>
+        <p class="detail-meta__value">2.5 months</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Stack</p>
+        <p class="detail-meta__value">Python, YOLOv8, DeepSORT, FastAPI, WebSocket, Redis</p>
+      </div>
+    </section>
+
+    <article class="detail-body">
+      <h2 class="detail-body__heading">Problem</h2>
+      <p>
+        The client operated 12 retail locations with over 40 cameras. Security staff manually monitored feeds
+        to estimate foot traffic, identify crowded zones, and flag capacity issues — a process that was
+        <strong>labor-intensive</strong>, <strong>error-prone</strong>, and provided no historical analytics.
+      </p>
+
+      <h2 class="detail-body__heading">Approach</h2>
+      <p>
+        I built an end-to-end pipeline from camera ingestion to dashboard visualization:
+      </p>
+      <ul>
+        <li><strong>Detection:</strong> YOLOv8 processes each camera feed at 30 FPS, detecting and classifying people with bounding boxes.</li>
+        <li><strong>Tracking:</strong> DeepSORT assigns persistent IDs to individuals, enabling accurate counting even with occlusion, re-entry, and cross-camera handoff.</li>
+        <li><strong>Analytics:</strong> A real-time engine computes zone-level counts, dwell-time distributions, and density heatmaps, pushing updates via WebSocket every 500ms.</li>
+        <li><strong>Alerting:</strong> Configurable thresholds trigger crowd density alerts to store managers via push notifications and dashboard banners.</li>
+      </ul>
+
+      <h2 class="detail-body__heading">Outcome</h2>
+      <p>
+        The dashboard replaced <strong>6 full-time monitoring staff</strong> across all locations, reducing
+        overhead by 70%. Zone dwell-time analytics enabled the client to optimize store layout, resulting in
+        a <strong>12% increase in average transaction value</strong> within the first quarter.
+      </p>
+
+      <h2 class="detail-body__heading">Key Technologies</h2>
+      <ul>
+        <li><strong>YOLOv8</strong> — Real-time person detection</li>
+        <li><strong>DeepSORT</strong> — Multi-object tracking with re-identification</li>
+        <li><strong>FastAPI + WebSocket</strong> — Low-latency backend and live data streaming</li>
+        <li><strong>Redis</strong> — In-memory state management for zone counters</li>
+        <li><strong>HTML Canvas</strong> — Real-time heatmap visualization</li>
+      </ul>
+    </article>
+
+    <div class="next-project">
+      <a href="invoice-extraction.html" class="next-project__link">
+        <p class="next-project__label">Next Project</p>
+        <p class="next-project__title">Intelligent Document &amp; Invoice Extraction Pipeline &rarr;</p>
+      </a>
+    </div>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
+      </div>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

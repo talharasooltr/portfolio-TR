@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tr-422.github.io/portfolio-TR/</loc>
+    <loc>https://talharasooltr.github.io/portfolio-TR/</loc>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://talharasooltr.github.io/portfolio-TR/projects/wound-morphometry.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://talharasooltr.github.io/portfolio-TR/projects/shot-selection.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://talharasooltr.github.io/portfolio-TR/projects/speech-enhancement.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://talharasooltr.github.io/portfolio-TR/projects/object-counting.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://talharasooltr.github.io/portfolio-TR/projects/invoice-extraction.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://talharasooltr.github.io/portfolio-TR/projects/anomaly-detection.html</loc>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intelligent Document &amp; Invoice Extraction Pipeline — Talha Rasool</title>
+  <meta name="description"
+    content="Case study: End-to-end document automation using PaddleOCR and LayoutLMv3 to extract structured fields from scanned invoices, processing 500+ documents daily with 97% accuracy." />
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/projects/invoice-extraction.html" />
+
+  <meta property="og:title" content="Intelligent Document & Invoice Extraction Pipeline — Talha Rasool" />
+  <meta property="og:description" content="PaddleOCR + LayoutLMv3 document automation processing 500+ invoices daily at 97% accuracy." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/projects/invoice-extraction.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Intelligent Document & Invoice Extraction Pipeline — Talha Rasool" />
+  <meta name="twitter:description" content="PaddleOCR + LayoutLMv3 automation processing 500+ invoices daily." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Intelligent Document & Invoice Extraction Pipeline",
+    "description": "End-to-end document automation using PaddleOCR and LayoutLMv3 for structured invoice data extraction.",
+    "author": { "@type": "Person", "name": "Talha Rasool" },
+    "keywords": ["OCR", "Automation", "PaddleOCR", "LayoutLMv3", "Document AI"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="../index.html" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="../index.html#work">Work</a></li>
+      <li><a class="nav__link" href="../index.html#about">About</a></li>
+      <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+      All Projects
+    </a>
+
+    <header class="detail-hero">
+      <div class="detail-hero__tags">
+        <span class="tag tag--amber">OCR</span>
+        <span class="tag tag--teal">Automation</span>
+      </div>
+      <h1 class="detail-hero__title">Intelligent Document &amp; Invoice Extraction Pipeline</h1>
+      <p class="detail-hero__summary">
+        An end-to-end document automation system that extracts structured data from scanned invoices
+        and PDFs — vendor names, totals, line items — and writes them directly to Google Sheets,
+        processing 500+ documents daily with 97% field accuracy.
+      </p>
+    </header>
+
+    <img class="detail-cover"
+      src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200"
+      alt="Intelligent Document Extraction Pipeline — invoice automation system"
+      width="1200" height="675" />
+
+    <section class="detail-meta" aria-label="Project Information">
+      <div>
+        <p class="detail-meta__label">Role</p>
+        <p class="detail-meta__value">AI/Automation Engineer</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Timeline</p>
+        <p class="detail-meta__value">2 months</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Stack</p>
+        <p class="detail-meta__value">Python, PaddleOCR, LayoutLMv3, Google Sheets API, Docker</p>
+      </div>
+    </section>
+
+    <article class="detail-body">
+      <h2 class="detail-body__heading">Problem</h2>
+      <p>
+        The client's accounts payable team manually keyed data from <strong>500+ invoices per day</strong> into spreadsheets.
+        Invoices arrived in varying formats — scanned PDFs, photos, and digital PDFs — from over 200 vendors.
+        Manual entry caused a <strong>15% error rate</strong> and consumed 3 full-time employees' time.
+      </p>
+
+      <h2 class="detail-body__heading">Approach</h2>
+      <p>
+        I built a four-stage pipeline optimized for diverse invoice layouts:
+      </p>
+      <ul>
+        <li><strong>Preprocessing:</strong> Scanned images are deskewed, binarized, and enhanced for OCR quality. PDFs are rendered to high-DPI images.</li>
+        <li><strong>OCR:</strong> PaddleOCR extracts raw text with bounding box coordinates, handling tables, multi-column layouts, and low-quality scans.</li>
+        <li><strong>Layout Understanding:</strong> LayoutLMv3 classifies each text region into semantic fields — vendor name, invoice number, date, line items, subtotals, tax, and total — using the spatial relationship between text blocks.</li>
+        <li><strong>Export:</strong> Extracted fields are validated, normalized, and pushed to Google Sheets via the API in real time, with a confidence-flagging system for human review of low-confidence extractions.</li>
+      </ul>
+
+      <h2 class="detail-body__heading">Outcome</h2>
+      <p>
+        The system achieved <strong>97% field-level accuracy</strong> across all vendor formats after a 2-week
+        fine-tuning period. It eliminated 2.5 FTEs of manual data entry work and reduced invoice processing
+        turnaround from <strong>48 hours to under 2 hours</strong>.
+      </p>
+
+      <h2 class="detail-body__heading">Key Technologies</h2>
+      <ul>
+        <li><strong>PaddleOCR</strong> — High-accuracy multilingual OCR engine</li>
+        <li><strong>LayoutLMv3</strong> — Document layout understanding and field classification</li>
+        <li><strong>Google Sheets API</strong> — Zero-touch data export</li>
+        <li><strong>Docker</strong> — Containerized deployment</li>
+        <li><strong>Python</strong> — Pipeline orchestration and data validation</li>
+      </ul>
+    </article>
+
+    <div class="next-project">
+      <a href="anomaly-detection.html" class="next-project__link">
+        <p class="next-project__label">Next Project</p>
+        <p class="next-project__title">Visual Anomaly Detection for Manufacturing QA &rarr;</p>
+      </a>
+    </div>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
+      </div>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

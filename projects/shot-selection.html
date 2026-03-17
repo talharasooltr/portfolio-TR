@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predictive Shot Selection Engine — Talha Rasool</title>
+  <meta name="description"
+    content="Case study: A hybrid deep learning pipeline using YOLO and U-Net to predict cricket batsman shot selection in real time before ball impact." />
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/projects/shot-selection.html" />
+
+  <meta property="og:title" content="Predictive Shot Selection Engine — Talha Rasool" />
+  <meta property="og:description" content="Deep learning pipeline using YOLO and U-Net for real-time cricket shot prediction." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/projects/shot-selection.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1624194697120-34347cff8b58?fm=jpg&q=60&w=3000" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Predictive Shot Selection Engine — Talha Rasool" />
+  <meta name="twitter:description" content="Deep learning pipeline for real-time cricket shot prediction." />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1624194697120-34347cff8b58?fm=jpg&q=60&w=3000" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Predictive Shot Selection Engine",
+    "description": "A hybrid deep learning pipeline for forecasting batsman intent using YOLO tracking and U-Net spatial heatmaps.",
+    "author": { "@type": "Person", "name": "Talha Rasool" },
+    "keywords": ["Deep Learning", "Sports Tech", "YOLO", "U-Net", "Cricket Analytics"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="../index.html" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="../index.html#work">Work</a></li>
+      <li><a class="nav__link" href="../index.html#about">About</a></li>
+      <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+      All Projects
+    </a>
+
+    <header class="detail-hero">
+      <div class="detail-hero__tags">
+        <span class="tag tag--orange">Deep Learning</span>
+        <span class="tag tag--blue">Sports Tech</span>
+      </div>
+      <h1 class="detail-hero__title">Predictive Shot Selection Engine</h1>
+      <p class="detail-hero__summary">
+        A hybrid deep learning pipeline that forecasts a cricket batsman's intended shot type —
+        Drive, Pull, or Cut — before the ball reaches the crease, by fusing real-time object
+        tracking with spatial heatmap analysis.
+      </p>
+    </header>
+
+    <img class="detail-cover"
+      src="https://images.unsplash.com/photo-1624194697120-34347cff8b58?fm=jpg&q=60&w=3000"
+      alt="Predictive Shot Selection Engine — cricket analytics pipeline"
+      width="1200" height="675" />
+
+    <section class="detail-meta" aria-label="Project Information">
+      <div>
+        <p class="detail-meta__label">Role</p>
+        <p class="detail-meta__value">ML Engineer</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Timeline</p>
+        <p class="detail-meta__value">4 months</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Stack</p>
+        <p class="detail-meta__value">Python, YOLO, U-Net, PyTorch, OpenCV</p>
+      </div>
+    </section>
+
+    <article class="detail-body">
+      <h2 class="detail-body__heading">Problem</h2>
+      <p>
+        Cricket coaching and broadcast analytics rely on <strong>post-hoc shot classification</strong> — labeling shots
+        after they've been played. There was no system capable of predicting shot intent <strong>before impact</strong>,
+        which would be invaluable for bowler strategy, coaching feedback, and real-time broadcast overlays.
+      </p>
+
+      <h2 class="detail-body__heading">Approach</h2>
+      <p>
+        The pipeline operates in two parallel streams that are fused before prediction:
+      </p>
+      <ul>
+        <li><strong>Tracking stream:</strong> YOLO detects and tracks the ball, bat, and batsman across consecutive frames, encoding trajectory vectors (speed, angle, bounce point).</li>
+        <li><strong>Spatial stream:</strong> A U-Net backbone generates per-frame heatmaps of the crease region, encoding the batsman's weight distribution, stance shift, and foot movement patterns.</li>
+        <li><strong>Fusion:</strong> Both feature sets feed into a lightweight temporal classifier (GRU) that outputs shot-type probabilities 200–400ms before ball contact.</li>
+      </ul>
+
+      <h2 class="detail-body__heading">Outcome</h2>
+      <p>
+        The model achieved <strong>78% top-1 accuracy</strong> across Drive, Pull, and Cut categories on a test set of
+        1,200 deliveries from professional match footage. Prediction latency was under <strong>50ms per frame</strong>
+        on a single GPU, enabling real-time overlay during live broadcasts.
+      </p>
+
+      <h2 class="detail-body__heading">Key Technologies</h2>
+      <ul>
+        <li><strong>YOLO</strong> — Multi-object tracking (ball, bat, batsman)</li>
+        <li><strong>U-Net</strong> — Crease-region spatial heatmap extraction</li>
+        <li><strong>GRU</strong> — Temporal fusion and shot classification</li>
+        <li><strong>PyTorch</strong> — Model training and inference</li>
+        <li><strong>OpenCV</strong> — Video preprocessing and frame extraction</li>
+      </ul>
+    </article>
+
+    <div class="next-project">
+      <a href="speech-enhancement.html" class="next-project__link">
+        <p class="next-project__label">Next Project</p>
+        <p class="next-project__title">Speech Enhancement Pipeline &rarr;</p>
+      </a>
+    </div>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
+      </div>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

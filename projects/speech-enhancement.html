@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speech Enhancement Pipeline — Talha Rasool</title>
+  <meta name="description"
+    content="Case study: Multi-stage AI pipeline that transcribes, improves, and regenerates speech using Gemini LLM and Text-to-Speech for content creators and accessibility." />
+  <link rel="canonical" href="https://talharasooltr.github.io/portfolio-TR/projects/speech-enhancement.html" />
+
+  <meta property="og:title" content="Speech Enhancement Pipeline — Talha Rasool" />
+  <meta property="og:description" content="AI pipeline combining transcription, LLM-powered text improvement, and TTS regeneration." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://talharasooltr.github.io/portfolio-TR/projects/speech-enhancement.html" />
+  <meta property="og:image" content="https://plus.unsplash.com/premium_photo-1756712070763-ef23cf0245c9?fm=jpg&q=60&w=3000" />
+  <meta property="og:site_name" content="Talha Rasool Portfolio" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Speech Enhancement Pipeline — Talha Rasool" />
+  <meta name="twitter:description" content="AI pipeline combining transcription, LLM improvement, and TTS regeneration." />
+  <meta name="twitter:image" content="https://plus.unsplash.com/premium_photo-1756712070763-ef23cf0245c9?fm=jpg&q=60&w=3000" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Speech Enhancement Pipeline",
+    "description": "Multi-stage AI pipeline for speech transcription, enhancement via Gemini LLM, and TTS regeneration.",
+    "author": { "@type": "Person", "name": "Talha Rasool" },
+    "keywords": ["AI", "Speech Tech", "Gemini LLM", "Text-to-Speech", "NLP"]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+
+  <nav class="container nav" aria-label="Main Navigation">
+    <a href="../index.html" class="nav__brand">Talha Rasool (TR)</a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="../index.html#work">Work</a></li>
+      <li><a class="nav__link" href="../index.html#about">About</a></li>
+      <li><a class="nav__link" href="../index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <a href="../index.html#work" class="back-link">
+      <span class="back-link__arrow" aria-hidden="true">&larr;</span>
+      All Projects
+    </a>
+
+    <header class="detail-hero">
+      <div class="detail-hero__tags">
+        <span class="tag tag--indigo">AI</span>
+        <span class="tag tag--purple">Speech Tech</span>
+      </div>
+      <h1 class="detail-hero__title">Speech Enhancement Pipeline</h1>
+      <p class="detail-hero__summary">
+        A multi-stage AI system that takes raw, imperfect audio and outputs polished, clear speech —
+        by chaining automatic transcription, LLM-powered text refinement, and neural text-to-speech synthesis.
+      </p>
+    </header>
+
+    <img class="detail-cover"
+      src="https://plus.unsplash.com/premium_photo-1756712070763-ef23cf0245c9?fm=jpg&q=60&w=3000"
+      alt="Speech Enhancement Pipeline — AI audio processing system"
+      width="1200" height="675" />
+
+    <section class="detail-meta" aria-label="Project Information">
+      <div>
+        <p class="detail-meta__label">Role</p>
+        <p class="detail-meta__value">Full-Stack AI Developer</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Timeline</p>
+        <p class="detail-meta__value">6 weeks</p>
+      </div>
+      <div>
+        <p class="detail-meta__label">Stack</p>
+        <p class="detail-meta__value">Python, Whisper, Gemini API, TTS, FastAPI</p>
+      </div>
+    </section>
+
+    <article class="detail-body">
+      <h2 class="detail-body__heading">Problem</h2>
+      <p>
+        Content creators, educators, and accessibility teams frequently work with audio that contains
+        <strong>grammatical errors</strong>, <strong>filler words</strong>, <strong>accent-heavy pronunciation</strong>,
+        or poor recording quality. Manual editing is time-consuming and requires specialized skills.
+      </p>
+
+      <h2 class="detail-body__heading">Approach</h2>
+      <p>
+        The pipeline processes audio through three sequential stages:
+      </p>
+      <ul>
+        <li><strong>Transcription:</strong> OpenAI Whisper converts raw audio to text with high accuracy, handling multiple accents and background noise gracefully.</li>
+        <li><strong>Text Enhancement:</strong> The transcript is passed to Gemini LLM with a carefully engineered prompt that corrects grammar, removes filler words, improves sentence structure, and preserves the speaker's original intent and tone.</li>
+        <li><strong>Speech Regeneration:</strong> The enhanced text is fed into a neural TTS engine that produces natural-sounding speech, with configurable voice, speed, and tone parameters.</li>
+      </ul>
+
+      <h2 class="detail-body__heading">Outcome</h2>
+      <p>
+        The system processes a <strong>10-minute audio clip in under 45 seconds</strong>. User testing showed a
+        <strong>92% preference rate</strong> for the enhanced output over the original across a panel of 50 listeners.
+        The pipeline is deployed as a REST API, enabling integration into existing content workflows.
+      </p>
+
+      <h2 class="detail-body__heading">Key Technologies</h2>
+      <ul>
+        <li><strong>OpenAI Whisper</strong> — Speech-to-text transcription</li>
+        <li><strong>Gemini LLM</strong> — Contextual text enhancement and grammar correction</li>
+        <li><strong>Neural TTS</strong> — High-fidelity speech synthesis</li>
+        <li><strong>FastAPI</strong> — REST API serving layer</li>
+        <li><strong>Python</strong> — Pipeline orchestration</li>
+      </ul>
+    </article>
+
+    <div class="next-project">
+      <a href="object-counting.html" class="next-project__link">
+        <p class="next-project__label">Next Project</p>
+        <p class="next-project__title">Real-Time Object Counting &amp; Tracking Dashboard &rarr;</p>
+      </a>
+    </div>
+
+  </main>
+
+  <footer id="contact" class="footer">
+    <div class="container footer__inner">
+      <div>
+        <p class="footer__heading">Let's build something together.</p>
+        <a class="footer__email" href="mailto:talharasool196@gmail.com">talharasool196@gmail.com</a>
+      </div>
+      <div class="footer__social">
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__social-link" href="#" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__social-link" href="https://github.com/trexplains" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
